@@ -80,15 +80,6 @@ for (let row = 0; row < lines.length; row++) {
 }
 console.log("Part 1: ", partNumbers);
 
-class Pair<L, T> {
-  left: L;
-  right: T;
-  constructor(left: L, right: T) {
-    this.left = left;
-    this.right = right;
-  }
-}
-
 function findAdjacents(row: number, col: number): Array<number> {
   const result = [];
   const marked = new Map<number, Map<number, boolean>>();
