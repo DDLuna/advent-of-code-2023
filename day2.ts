@@ -76,7 +76,6 @@ class Game {
 }
 
 const games = readLines("inputs/day2.txt")
-  .filter(line => line.trim().length > 0)
   .map(Game.fromLine);
 
 let possibleGames = 0;

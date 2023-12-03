@@ -4,5 +4,5 @@ export function readFile(path: string): string {
 }
 
 export function readLines(path: string): Array<string> {
-    return readFile(path).split(/\r?\n/g);
+    return readFile(path).trim().split(/\r?\n/g);
 }
