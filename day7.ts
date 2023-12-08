@@ -66,8 +66,9 @@ class HandBidPair {
     for (let i = 0; i < 5; i++) {
       if (this.hand[i] !== other.hand[i]) {
         // Use this.constructor to allow child classes to override strengths.
-        return this.constructor.strengths.get(this.hand[i])! -
-          this.constructor.strengths.get(other.hand[i])!;
+        const self = this.constructor as typeof HandBidPair;
+        return self.strengths.get(this.hand[i])! -
+          self.strengths.get(other.hand[i])!;
       }
     }
     return 0;
