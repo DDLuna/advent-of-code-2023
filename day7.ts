@@ -76,7 +76,7 @@ class HandBidPair {
 
 function totalWinnings(pairs: Array<HandBidPair>): number {
   return pairs.sort((a, b) => a.compareTo(b))
-  .reduce((acc, pair, index) => acc += pair.bid * (index + 1), 0);
+    .reduce((acc, pair, index) => acc += pair.bid * (index + 1), 0);
 }
 
 const lines = readLines("inputs/day7.txt");
@@ -113,8 +113,8 @@ class HandBidPairV2 extends HandBidPair {
         break;
       case 3:
         this.type = cardMap.size === 1
-        ? HandType.FIVE_OF_A_KIND
-        : HandType.FOUR_OF_A_KIND;
+          ? HandType.FIVE_OF_A_KIND
+          : HandType.FOUR_OF_A_KIND;
         break;
       case 2:
         if (cardMap.size === 1) {
@@ -129,7 +129,7 @@ class HandBidPairV2 extends HandBidPair {
         if (cardMap.size === 1) {
           this.type = HandType.FIVE_OF_A_KIND;
         } else if (cardMap.size === 2) {
-          const maxGroup = Math.max(...Array.from(cardMap.values()))
+          const maxGroup = Math.max(...Array.from(cardMap.values()));
           this.type = maxGroup === 3
             ? HandType.FOUR_OF_A_KIND
             : HandType.FULL_HOUSE;
