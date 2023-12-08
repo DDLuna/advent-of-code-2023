@@ -1,8 +1,8 @@
 
 export function readFile(path: string): string {
-    return Deno.readTextFileSync(path);
+    return Deno.readTextFileSync(path).trim();
 }
 
 export function readLines(path: string): Array<string> {
-    return readFile(path).trim().split(/\r?\n/g);
+    return readFile(path).split(/\r?\n/g);
 }
